@@ -103,11 +103,37 @@
             text-decoration: none;
             color: black;
         }
-        #aespa{
-            border-radius: 40px;
-            overflow: hidden;
-        }
+        
     </style>
+    <style>
+        ul,li{
+            list-style:none;
+        }
+        .slide{
+            width:550px; 
+            overflow:hidden;
+        }
+        .slide ul{
+            width:calc(100% * 4);
+            display:flex;
+            animation:slide 20s infinite;
+        } /* slide를 8초동안 진행하며 무한반복 함 */
+        .slide li{
+            width:calc(100% / 4);
+            height:300px;
+        }
+        @keyframes slide {
+            0% {margin-left:0;} /* 0 ~ 10  : 정지 */
+          10% {margin-left:0;} /* 10 ~ 25 : 변이 */
+          25% {margin-left:-100%;} /* 25 ~ 35 : 정지 */
+          35% {margin-left:-100%;} /* 35 ~ 50 : 변이 */
+          50% {margin-left:-200%;}
+          60% {margin-left:-200%;}
+          75% {margin-left:-300%;}
+          85% {margin-left:-300%;}
+          100% {margin-left:0;}
+        }
+      </style>
 </head>
 <body id="page">
     <header>
@@ -126,7 +152,14 @@
         </ul>
     </nav>
     <section id="aespa">
-        <img src="./images/aespa.png">
+        <div class="slide">
+            <ul>
+              <li><img src="./images/aespa.png" width="500"></li>
+              <li><img src="./images/aespa forever.png" width="500" height="333.5"></li>
+              <li><img src="./images/aespa nextlevel.png" width="500"></li>
+              <li><img src="./images/aespa1.png" width="500" height="333.5"></li>
+            </ul>
+          </div>
     </section>
     <aside>
         <ul>
